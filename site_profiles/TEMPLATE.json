@@ -2,7 +2,7 @@
   "_instructions": [
     "This is a TEMPLATE for adding a new website to the test agent.",
     "Copy this file to site_profiles/<your_site_name>.json and fill it in.",
-    "Then run: python run_tests.py --site <your_site_name>",
+    "Then run: python main.py --site <your_site_name>",
     "",
     "You do NOT need to write or edit any Python code to test a new site.",
     "Every test file reads urls/selectors from config.py, which loads",

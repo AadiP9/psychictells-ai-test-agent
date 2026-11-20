@@ -78,10 +78,14 @@ class FakePage:
 
     def wait_for_url(self, predicate, timeout=2000):
         """
-        Simulates wait_for_url. Records the call.
-        Does NOT raise — simulates "no navigation happened" (URL unchanged).
+        Simulates Playwright's wait_for_url. Records the call.
+        Like the real thing, it raises a timeout when the predicate is not
+        satisfied (i.e. the URL did not change), so the executor's
+        dispatch_event fallback path is exercised.
         """
         self._wait_for_url_calls.append({"timeout": timeout})
+        if not predicate(self.url):
+            raise TimeoutError("wait_for_url timed out: URL did not change")
 
     def wait_for_load_state(self, state, timeout=None):
         pass

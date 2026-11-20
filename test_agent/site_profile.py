@@ -9,11 +9,11 @@ in config.py now live in a JSON file under site_profiles/, and this module
 loads whichever one is requested.
 
 To point the entire framework at a different website:
-    python run_tests.py --site my_other_site
+    python main.py --site my_other_site
     (loads site_profiles/my_other_site.json)
 
 or via environment variable:
-    SITE_PROFILE=my_other_site python run_tests.py
+    SITE_PROFILE=my_other_site python main.py
 
 No Python code needs to change — only the JSON profile.
 

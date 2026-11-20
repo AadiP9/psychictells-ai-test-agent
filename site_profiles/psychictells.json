@@ -20,14 +20,14 @@
     "user_email_env":     "USER_EMAIL",
     "user_password_env":  "USER_PASSWORD",
     "user_name_env":      "USER_NAME",
-    "user_email_default":    "parashararyaman18@gmail.com",
-    "user_password_default": "Aryaman@1812",
-    "user_name_default":     "Aryaman Parashar",
+    "user_email_default":    "",
+    "user_password_default": "",
+    "user_name_default":     "",
 
     "expert_email_env":    "EXPERT_EMAIL",
     "expert_password_env": "EXPERT_PASSWORD",
-    "expert_email_default":    "aryamanparashar9@gmail.com",
-    "expert_password_default": "Test@1234"
+    "expert_email_default":    "",
+    "expert_password_default": ""
   },
 
   "selectors": {
