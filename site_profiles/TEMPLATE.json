@@ -1,0 +1,132 @@
+{
+  "_instructions": [
+    "This is a TEMPLATE for adding a new website to the test agent.",
+    "Copy this file to site_profiles/<your_site_name>.json and fill it in.",
+    "Then run: python run_tests.py --site <your_site_name>",
+    "",
+    "You do NOT need to write or edit any Python code to test a new site.",
+    "Every test file reads urls/selectors from config.py, which loads",
+    "whichever profile you point it at via --site or the SITE_PROFILE env var.",
+    "",
+    "KEY CONTRACT: the *keys* in this file (e.g. 'ask_free_question_btn',",
+    "'login_page', 'email_input') must stay the same across every site",
+    "profile — only the *values* (actual selectors/URLs for your site)",
+    "change. The generic test suites (navigation, click-interactions,",
+    "multi-navigation, self-healing, UI-regression) work on ANY site with",
+    "zero code changes once these keys are filled in correctly.",
+    "",
+    "The business-flow suites (ask-a-question, auth, chat, payment, expert",
+    "panel) assume your site has a roughly analogous flow — e.g. 'ask a",
+    "question' could become 'submit an inquiry' or 'request a quote' on a",
+    "different business, as long as you map its button/form selectors to",
+    "the same keys below."
+  ],
+
+  "site_name": "REPLACE_WITH_SHORT_NAME",
+  "display_name": "Replace With Display Name",
+  "domain": "example.com",
+  "expert_domain": "",
+
+  "urls": {
+    "base": "https://example.com",
+    "listing_page": "/products",
+    "login_page": "/login",
+    "signup_page": "/signup",
+    "account_page": "/account",
+
+    "expert_base": "",
+    "expert_login_page": "",
+    "expert_dashboard": ""
+  },
+
+  "credentials": {
+    "user_email_env": "USER_EMAIL",
+    "user_password_env": "USER_PASSWORD",
+    "user_name_env": "USER_NAME",
+    "user_email_default": "",
+    "user_password_default": "",
+    "user_name_default": "",
+
+    "expert_email_env": "EXPERT_EMAIL",
+    "expert_password_env": "EXPERT_PASSWORD",
+    "expert_email_default": "",
+    "expert_password_default": ""
+  },
+
+  "selectors": {
+    "ask_free_question_btn": "button:has-text('YOUR PRIMARY CTA TEXT')",
+    "ask_btn_fallbacks": [
+      "button:has-text('YOUR PRIMARY CTA TEXT')"
+    ],
+    "psychic_card": "a[href*='/product/']",
+    "psychic_card_fallback": [
+      "a[href*='/product/']", ".card a", "article a"
+    ],
+    "question_textarea": "textarea",
+    "question_input": "input[type='text']",
+    "category_select": "select",
+    "submit_button": "button[type='submit']",
+    "success_message": ".success, [class*='success']",
+    "error_message": ".error, [class*='error']",
+    "validation_message": ".invalid-feedback, [class*='invalid']",
+
+    "user_auth": {
+      "login_btn_nav": ["a:has-text('Login')"],
+      "signup_btn_nav": ["a:has-text('Sign Up')"],
+      "email_input": ["input[type='email']"],
+      "password_input": ["input[type='password']"],
+      "name_input": ["input[name='name']"],
+      "submit_login": ["button[type='submit']"],
+      "submit_signup": ["button[type='submit']"],
+      "logout_btn": ["button:has-text('Logout')"],
+      "logged_in_indicators": ["[class*='avatar']"],
+      "error_indicators": ["[class*='error']"]
+    },
+
+    "expert": {
+      "email_input": ["input[type='email']"],
+      "password_input": ["input[type='password']"],
+      "submit_btn": ["button[type='submit']"],
+      "dashboard_indicators": ["[class*='dashboard']"],
+      "availability_toggle": ["input[type='checkbox']"],
+      "profile_link": ["a:has-text('Profile')"],
+      "earnings_section": ["[class*='earning']"]
+    },
+
+    "chat": {
+      "start_chat_btn": ["button:has-text('Chat')"],
+      "chat_input": ["textarea"],
+      "send_btn": ["button:has-text('Send')"],
+      "chat_window": ["[class*='chat']"]
+    },
+
+    "payment": {
+      "credits_nav": ["a:has-text('Buy')"],
+      "plan_cards": ["[class*='plan']"],
+      "card_number_input": ["input[placeholder*='card' i]"],
+      "pay_btn": ["button:has-text('Pay')"],
+      "secure_indicators": ["[class*='secure']"]
+    }
+  },
+
+  "non_profile_path_segments": [
+    "", "products", "about", "contact", "login", "signup", "pricing",
+    "blog", "faq", "help", "terms", "privacy", "cart", "checkout"
+  ],
+
+  "profile_url_prefixes": [
+    "/product/", "/item/", "/detail/"
+  ],
+
+  "baseline_pages": [
+    {
+      "id": "homepage",
+      "path": "/",
+      "checks": {
+        "title_contains": ["Replace With Display Name"],
+        "min_elements": {"a": 5, "button": 1},
+        "critical_selectors": ["nav", "footer"]
+      }
+    }
+  ]
+}

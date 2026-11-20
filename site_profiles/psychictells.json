@@ -1,0 +1,228 @@
+{
+  "site_name": "psychictells",
+  "display_name": "PsychicTells",
+  "domain": "psychictells-com.onrender.com",
+  "expert_domain": "psychic-expert-dashboard.onrender.com",
+
+  "urls": {
+    "base":            "https://psychictells-com.onrender.com",
+    "listing_page":    "/psychics",
+    "login_page":      "/login",
+    "signup_page":     "/login",
+    "dashboard_page":  "/dashboard",
+
+    "expert_base":       "https://psychic-expert-dashboard.onrender.com",
+    "expert_login_page": "/login",
+    "expert_dashboard":  "/dashboard"
+  },
+
+  "credentials": {
+    "user_email_env":     "USER_EMAIL",
+    "user_password_env":  "USER_PASSWORD",
+    "user_name_env":      "USER_NAME",
+    "user_email_default":    "parashararyaman18@gmail.com",
+    "user_password_default": "Aryaman@1812",
+    "user_name_default":     "Aryaman Parashar",
+
+    "expert_email_env":    "EXPERT_EMAIL",
+    "expert_password_env": "EXPERT_PASSWORD",
+    "expert_email_default":    "aryamanparashar9@gmail.com",
+    "expert_password_default": "Test@1234"
+  },
+
+  "selectors": {
+    "ask_free_question_btn": "button:has-text('Ask a Free Question')",
+    "ask_btn_fallbacks": [
+      "button:has-text('Ask a Free Question')",
+      "button:has-text('Ask a Question')",
+      "a:has-text('Ask a Free Question')",
+      "[class*='rounded-full']:has-text('Ask')",
+      "a[href*='psychics']",
+      "button:has-text('Ask')"
+    ],
+    "psychic_card": "a[href*='/psychic/'], a[href*='/reader/']",
+    "psychic_card_fallback": [
+      "a[href*='/psychic']", "a[href*='/reader']",
+      ".card a", "article a",
+      "[class*='psychic'] a", "[class*='expert'] a"
+    ],
+    "question_textarea": "textarea",
+    "question_input": "input[type='text'][placeholder*='question' i], input[type='text'][name*='question' i]",
+    "category_select": "select",
+    "submit_button": "button[type='submit'], input[type='submit'], button:has-text('Submit'), button:has-text('Ask'), button:has-text('Send')",
+    "success_message":    ".success, .confirmation, .alert-success, [class*='success'], [class*='thank']",
+    "error_message":      ".error, .alert-danger, .alert-error, [class*='error']",
+    "validation_message": ".invalid-feedback, [class*='error'], [class*='invalid']",
+
+    "user_auth": {
+      "login_btn_nav": [
+        "a:has-text('Login')", "a:has-text('Sign In')",
+        "button:has-text('Login')", "button:has-text('Sign In')",
+        "a[href*='login']"
+      ],
+      "signup_btn_nav": [
+        "a:has-text('Sign Up')", "a:has-text('Register')",
+        "a:has-text('Create Account')", "button:has-text('Sign Up')",
+        "a[href*='signup']", "a[href*='register']"
+      ],
+      "email_input": [
+        "input[type='email']", "input[name='email']",
+        "input[placeholder*='email' i]"
+      ],
+      "password_input": [
+        "input[type='password']", "input[name='password']",
+        "input[placeholder*='password' i]"
+      ],
+      "name_input": [
+        "input[name='name']", "input[name='fullName']",
+        "input[placeholder*='name' i]", "input[name='firstName']"
+      ],
+      "submit_login": [
+        "button[type='submit']", "button:has-text('Login')",
+        "button:has-text('Sign In')", "input[type='submit']"
+      ],
+      "submit_signup": [
+        "button[type='submit']", "button:has-text('Sign Up')",
+        "button:has-text('Create Account')", "button:has-text('Register')"
+      ],
+      "logout_btn": [
+        "button:has-text('Logout')", "button:has-text('Sign Out')",
+        "a:has-text('Logout')", "a:has-text('Sign Out')",
+        "[class*='logout']", "[class*='signout']"
+      ],
+      "logged_in_indicators": [
+        "[class*='avatar']", "[class*='profile']", "[class*='account']",
+        "a[href*='account']", "a[href*='profile']",
+        "button:has-text('Logout')", "button:has-text('Sign Out')"
+      ],
+      "error_indicators": [
+        "[class*='error']", "[class*='invalid']", ".alert",
+        "[class*='alert']", "p:has-text('Invalid')", "p:has-text('incorrect')"
+      ]
+    },
+
+    "expert": {
+      "email_input":    ["input[type='email']", "input[name='email']", "input[placeholder*='email' i]"],
+      "password_input": ["input[type='password']", "input[name='password']"],
+      "submit_btn":     ["button[type='submit']", "button:has-text('Login')", "button:has-text('Sign In')"],
+      "dashboard_indicators": [
+        "[class*='dashboard']", "[class*='earnings']", "[class*='consultation']",
+        "h1:has-text('Dashboard')", "[class*='stats']", "[class*='balance']"
+      ],
+      "availability_toggle": [
+        "input[type='checkbox']", "[class*='toggle']", "[class*='available']",
+        "button:has-text('Available')", "button:has-text('Online')"
+      ],
+      "profile_link": [
+        "a:has-text('Profile')", "a[href*='profile']",
+        "[class*='profile']", "a:has-text('My Profile')"
+      ],
+      "earnings_section": [
+        "[class*='earning']", "[class*='balance']", "[class*='revenue']",
+        "text=Earnings", "text=Balance"
+      ]
+    },
+
+    "chat": {
+      "start_chat_btn": [
+        "button:has-text('Chat')", "button:has-text('Start Chat')",
+        "button:has-text('Connect')", "a:has-text('Chat')",
+        "[class*='chat']", "button:has-text('Consult')"
+      ],
+      "chat_input": [
+        "input[placeholder*='message' i]", "textarea[placeholder*='message' i]",
+        "input[placeholder*='type' i]", "textarea",
+        "[contenteditable='true']"
+      ],
+      "send_btn": [
+        "button:has-text('Send')", "button[type='submit']",
+        "[class*='send']", "button:has-text('>')"
+      ],
+      "chat_window": [
+        "[class*='chat']", "[class*='message']", "[class*='conversation']",
+        "[class*='inbox']"
+      ]
+    },
+
+    "payment": {
+      "credits_nav": [
+        "a:has-text('Credits')", "a:has-text('Buy Credits')",
+        "a:has-text('Add Credits')", "a[href*='credit']",
+        "button:has-text('Credits')"
+      ],
+      "plan_cards": [
+        "[class*='plan']", "[class*='package']", "[class*='price']",
+        "[class*='credit']", "[class*='bundle']"
+      ],
+      "card_number_input": [
+        "input[placeholder*='card' i]", "input[name*='card' i]",
+        "input[placeholder*='1234' i]", "input[data-elements-stable-field-name='cardNumber']"
+      ],
+      "pay_btn": [
+        "button:has-text('Pay')", "button:has-text('Purchase')",
+        "button:has-text('Buy')", "button[type='submit']"
+      ],
+      "secure_indicators": [
+        "[class*='secure']", "[class*='ssl']", "[class*='stripe']",
+        "img[alt*='secure' i]", "img[alt*='stripe' i]"
+      ]
+    }
+  },
+
+  "non_profile_path_segments": [
+    "", "psychics", "services", "about", "about-us", "contact", "contact-us",
+    "login", "signup", "sign-up", "register", "create-account", "join",
+    "join-as-psychic", "become-a-psychic", "apply", "recruitment",
+    "pricing", "credits", "buy-credits", "add-credits", "checkout", "payment",
+    "blog", "faq", "help", "support", "terms", "privacy", "policy",
+    "dashboard", "account", "profile-settings", "settings", "cart",
+    "reviews", "testimonials", "careers", "press", "sitemap"
+  ],
+
+  "profile_url_prefixes": [
+    "/psychics/", "/psychic/", "/reader/", "/expert/", "/profile/"
+  ],
+
+  "baseline_pages": [
+    {
+      "id": "homepage",
+      "path": "/",
+      "checks": {
+        "title_contains": ["PsychicTells", "Psychic"],
+        "min_elements": {"a": 5, "button": 1},
+        "critical_selectors": ["button:has-text('Ask')", "nav", "footer"]
+      }
+    },
+    {
+      "id": "psychics_listing",
+      "path": "/psychics",
+      "checks": {
+        "title_contains": ["PsychicTells", "Psychic"],
+        "min_elements": {"a": 3},
+        "critical_selectors": ["nav"]
+      }
+    },
+    {
+      "id": "login_page",
+      "path": "/login",
+      "checks": {
+        "title_contains": ["PsychicTells", "Login", "Sign"],
+        "min_elements": {"input": 2, "button": 1},
+        "critical_selectors": [
+          "input[type='email']",
+          "input[type='password']",
+          "button[type='submit']"
+        ]
+      }
+    },
+    {
+      "id": "expert_login",
+      "path": "__EXPERT_LOGIN__",
+      "checks": {
+        "title_contains": ["PsychicTells", "Expert", "Login"],
+        "min_elements": {"input": 2, "button": 1},
+        "critical_selectors": ["input[type='email']"]
+      }
+    }
+  ]
+}
